@@ -1,10 +1,10 @@
-import meme from "../images/memeimg.png";
 import Data from "../MemesData";
 let Main = () => {
   let Handleclick = function () {
-    return console.log(
-      Data.data.memes[Math.floor(Math.random() * Data.data.memes.length)]
-    );
+    let memesArray = Data.data.memes;
+    const Randommeme = Math.floor(Math.random() * memesArray.length);
+    let { url } = memesArray[Randommeme];
+    console.log(url);
   };
   return (
     <main>
