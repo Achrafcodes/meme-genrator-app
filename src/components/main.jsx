@@ -1,10 +1,12 @@
+import { useState } from "react";
 import Data from "../MemesData";
 let Main = () => {
+  let [memeImg, setmemeImg] = useState("");
   let Handleclick = function () {
     let memesArray = Data.data.memes;
     const Randommeme = Math.floor(Math.random() * memesArray.length);
     let { url } = memesArray[Randommeme];
-    console.log(url);
+    return setmemeImg(url);
   };
   return (
     <main>
@@ -15,6 +17,7 @@ let Main = () => {
           Get a new meme image 🖼
         </button>
       </div>{" "}
+      <img className="meme" src={memeImg} alt="" />
     </main>
   );
 };
