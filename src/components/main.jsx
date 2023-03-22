@@ -21,4 +21,5 @@ let Main = () => {
     </main>
   );
 };
+// let's start the section
 export default Main;
