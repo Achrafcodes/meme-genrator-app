@@ -23,7 +23,8 @@ export default function Meme() {
     const url = memesArray[randomNumber].url;
     setMeme(prevMeme => ({
       ...prevMeme,
-      randomImage: url
+      randomImage: url,
+      topText: prevMeme.topText
     }));
   }
   function handleinputs(e) {
@@ -35,12 +36,9 @@ export default function Meme() {
       };
     });
   }
-  function handlesubmit(e) {
-    e.preventDefault();
-    console.log(meme);
-  }
+
   return (
-    <main onSubmit={handlesubmit}>
+    <main onSubmit={getMemeImage}>
       <div className="form">
         <input
           onChange={handleinputs}
@@ -64,7 +62,7 @@ export default function Meme() {
       </div>
       <div className="meme">
         <img alt="" src={meme.randomImage} className="meme--image" />
-        <h2 className="meme--text top"> </h2>
+        <h2 className="meme--text top"> {meme.topText}</h2>
         <h2 className="meme--text bottom">{meme.bottomText}</h2>
       </div>
     </main>
