@@ -8,7 +8,7 @@ export default function Meme() {
     randomImage: 'http://i.imgflip.com/1bij.jpg'
   });
   const [allMemes, setAllMemes] = useState([]);
-
+  localStorage();
   useEffect(function () {
     fetch('https://api.imgflip.com/get_memes')
       .then(res => res.json())
